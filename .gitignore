@@ -1,0 +1,40 @@
+
+Library/
+Temp/
+obj/
+builds/
+.vscode/
+
+*.unityproj
+*.booproj
+/*.csproj
+/*.sln
+*.suo
+*.userprefs
+
+# Windows
+Thumbs.db
+Thumbs.db.meta
+ehthumbs.db
+Desktop.ini
+
+# OSX
+.DS_Store
+*.swp
+*.Trashes
+savegame.dat
+
+# Android Projects
+local.properties
+local.properties.meta
+Assets/Plugins/Android/SpungeExtension/bin.meta
+Assets/Plugins/Android/SpungeExtension/bin/*/
+Assets/Plugins/Android/SpungeExtension/bin/*
+!Assets/Plugins/Android/SpungeExtension/bin/obfuscated_*
+Assets/Plugins/Android/SpungeExtension/gen.meta
+Assets/Plugins/Android/SpungeExtension/gen/
+Assets/Plugins/Android/SpungeExtension/libs.meta
+Assets/Plugins/Android/SpungeExtension/libs/
+
+/*.sln
+/.vs/*
