@@ -18,9 +18,16 @@ public class Ball : MonoBehaviour
     void BeginRound(){
         float randomValue = Random.value;
         if(randomValue >= 0.5f)
-            rigidbody.AddForce(new Vector2(20, -15));
+            rigidbody.velocity = Vector2.right * speed;
+            //rigidbody.AddForce(new Vector2(20, -15));
         else
-            rigidbody.AddForce(new Vector2(-20, -15));
+            rigidbody.velocity = Vector2.left * speed;
+            //rigidbody.AddForce(new Vector2(-20, -15));
+    }
+    public void RestartGame(){
+        rigidbody.velocity = new Vector2(0, 0);
+        transform.position = Vector2.zero;
+        Invoke("BeginRound", 1.5f);
     }
 
     void OnCollisionEnter2D (Collision2D coll) {
