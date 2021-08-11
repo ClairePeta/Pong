@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     new Rigidbody2D rigidbody;
     [Range(1f, 10f)]
     public float speed = 5f;
+    public TextMeshProUGUI scoreText;
 
     void Start()
     {
@@ -17,14 +19,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(player1){
+            scoreText.text = GameManager.PlayerOneScore.ToString();          
             var vel = rigidbody.velocity;
             if (Input.GetKey(KeyCode.UpArrow)) { vel.y = speed; }  /*move up*/ 
             else if (Input.GetKey(KeyCode.DownArrow)) { vel.y = -speed; } /*move down*/
             else { vel.y = 0; } /*stop moving*/
             rigidbody.velocity = vel;
         }else{
+            scoreText.text = GameManager.PlayerTwoScore.ToString();   
             var vel = rigidbody.velocity;
             if (Input.GetKey(KeyCode.W)) { vel.y = speed; }  /*move up*/ 
             else if (Input.GetKey(KeyCode.S)) { vel.y = -speed; } /*move down*/
