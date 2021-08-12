@@ -19,7 +19,7 @@ Pong Game: https://github.com/ClairePeta/Pong
 ## Controls
 ● Player one (Arrow keys Up and Down)
 
-● Player two (W to move up, and S to mvoe down)
+● Player two (W to move up, and S to move down)
 
 ● For both players (SpaceBar to pause the game, and ESC to quit to main menu)
 
