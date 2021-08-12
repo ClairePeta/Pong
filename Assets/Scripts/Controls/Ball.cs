@@ -5,6 +5,8 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     new Rigidbody2D rigidbody;
+    Vector2 velocity;
+    bool saved = false;
 
     //[Range(1f, 10f)]
      float speed = 15f;
@@ -28,6 +30,17 @@ public class Ball : MonoBehaviour
         rigidbody.velocity = new Vector2(0, 0);
         transform.position = Vector2.zero;
         Invoke("BeginRound", 1.5f);
+    }
+    void Update(){
+        if(PongGlobal.paused && !saved){
+            velocity = rigidbody.velocity;
+            rigidbody.velocity = Vector2.zero;
+            saved = true;
+        }
+        if(!PongGlobal.paused && saved){
+            saved = false;
+            rigidbody.velocity = velocity;
+        }
     }
 
     void OnCollisionEnter2D (Collision2D coll) {
