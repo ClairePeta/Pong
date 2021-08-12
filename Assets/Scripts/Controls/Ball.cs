@@ -11,8 +11,7 @@ public class Ball : MonoBehaviour
     float startspeed = 10f;
 
  
-    void Start()
-    {
+    void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.velocity = Vector2.right * startspeed;
         //wait two second before shooting the ball
@@ -43,7 +42,6 @@ public class Ball : MonoBehaviour
             rigidbody.velocity = velocity;
         }
     }
-
     void OnCollisionEnter2D (Collision2D coll) {
         if(coll.collider.CompareTag("Player")){
             if(PongGlobal.effectVolume)

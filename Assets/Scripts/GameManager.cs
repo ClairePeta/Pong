@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
             int counter = 3 - (int)elapsedTime;
             text.text = counter.ToString();
             yield return new WaitForEndOfFrame();
-
             elapsedTime += Time.deltaTime;
         }
         countdownCanvas.SetActive(false);
@@ -50,7 +49,6 @@ public class GameManager : MonoBehaviour
             gameover.displayGameOver("Player 1");
         else if (PlayerTwoScore > 10)
             gameover.displayGameOver("Player 2");
-
     }
     public void pause(){
         pauseScreen.SetActive(true);

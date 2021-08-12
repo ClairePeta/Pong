@@ -10,27 +10,18 @@ public class MainMenu : MonoBehaviour
     public Button startMultiPlayerButton;
     public Button settingsButton;
     public GameObject settingsScreen;
-    // Start is called before the first frame update
     void Start()
     {
         startSinglePlayerButton.onClick.AddListener(()=> {
-            StartGame(true);
+            PongGlobal.playAgainstAI = false;
+            SceneManager.LoadScene("Game");
         });
         startMultiPlayerButton.onClick.AddListener(()=> {
-            StartGame();
+            PongGlobal.playAgainstAI = true;
+            SceneManager.LoadScene("Game");
         });
         settingsButton.onClick.AddListener(()=> {
             settingsScreen.SetActive(true);
-        });       
-
-        //for no
-        startMultiPlayerButton.enabled = false;         
+        });               
     }
-
-    // Update is called once per frame
-    void StartGame(bool singlePlayer = false)
-    {
-        SceneManager.LoadScene("Game");
-    }
-
 }
