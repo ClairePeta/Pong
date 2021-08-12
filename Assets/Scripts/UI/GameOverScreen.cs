@@ -8,17 +8,14 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public Button homeButton;
-    public Button replayButton;
     public TextMeshProUGUI winner;
 
     void Start()
     {
         homeButton.onClick.AddListener(()=> {
+            this.gameObject.SetActive(false);
             SceneManager.LoadScene("Menu");
-        });
-        replayButton.onClick.AddListener(()=> {
-            SceneManager.LoadScene("Game");
-        });                
+        });            
     }
     public void displayGameOver(string name){
         this.gameObject.SetActive(true);

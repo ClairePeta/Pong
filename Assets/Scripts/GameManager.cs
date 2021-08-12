@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     void Start(){
         instance = this;
         bounds = (float)camera.orthographicSize - ((float)(camera.orthographicSize  / Screen.height)*80);
+        PlayerOneScore = 0;
+        PlayerTwoScore = 0;
+
     }
     public static void IncrementScore(string hitside){
         if(hitside == "ScoreCollider-Right")
