@@ -325,6 +325,8 @@ MonoBehaviour:
   gameover: {fileID: 117395617}
   pauseScreen: {fileID: 395411620}
   countdownCanvas: {fileID: 1979364922}
+  camera: {fileID: 1259402955}
+  bounds: 0
 --- !u!4 &319039072
 Transform:
   m_ObjectHideFlags: 0

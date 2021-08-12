@@ -12,9 +12,12 @@ public class GameManager : MonoBehaviour
     public GameOverScreen gameover;
     public GameObject pauseScreen;
     public GameObject countdownCanvas;
+    new public Camera camera;
+    public float bounds;
     
     void Start(){
         instance = this;
+        bounds = (float)camera.orthographicSize - ((float)(camera.orthographicSize  / Screen.height)*80);
     }
     public static void IncrementScore(string hitside){
         if(hitside == "ScoreCollider-Right")

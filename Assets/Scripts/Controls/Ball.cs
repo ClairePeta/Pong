@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 {
     new Rigidbody2D rigidbody;
     public new AudioSource audio;
-    Vector2 velocity;
+    Vector2 savedVelocity;
     bool saved = false;
     float startspeed = 10f;
 
@@ -33,13 +33,13 @@ public class Ball : MonoBehaviour
     }
     void Update(){
         if(PongGlobal.paused && !saved){
-            velocity = rigidbody.velocity;
+            savedVelocity = rigidbody.velocity;
             rigidbody.velocity = Vector2.zero;
             saved = true;
         }
         if(!PongGlobal.paused && saved){
             saved = false;
-            rigidbody.velocity = velocity;
+            rigidbody.velocity = savedVelocity;
         }
     }
     void OnCollisionEnter2D (Collision2D coll) {

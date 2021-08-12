@@ -13,14 +13,11 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     GameObject ball;
     public TextMeshProUGUI scoreText;
-    RectTransform rect;
     float bounds = 0.0f;
 
     void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
-        rect = GetComponent<RectTransform>();
-        bounds = (Screen.height - 60) / 100.0f;
-        Debug.Log("screen heigh: " + Screen.height + " bounds " + bounds);
+        bounds = GameManager.instance.bounds;
         if(PongGlobal.playAgainstAI){
             AI = true;
             ball = GameObject.Find("Ball");
