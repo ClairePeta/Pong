@@ -5,26 +5,26 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     new Rigidbody2D rigidbody;
-    public AudioSource audio;
+    public new AudioSource audio;
     Vector2 velocity;
     bool saved = false;
+    float startspeed = 10f;
 
-    //[Range(1f, 10f)]
-     float speed = 15f;
+ 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.velocity = Vector2.right * speed;
+        rigidbody.velocity = Vector2.right * startspeed;
         //wait two second before shooting the ball
         //Invoke("BeginRound", 2.0f);
     }
     void BeginRound(){
         float randomValue = Random.value;
         if(randomValue >= 0.5f)
-            rigidbody.velocity = Vector2.right * speed;
+            rigidbody.velocity = Vector2.right * startspeed;
             //rigidbody.AddForce(new Vector2(20, -15));
         else
-            rigidbody.velocity = Vector2.left * speed;
+            rigidbody.velocity = Vector2.left * startspeed;
             //rigidbody.AddForce(new Vector2(-20, -15));
     }
     public void RestartGame(){
@@ -51,7 +51,7 @@ public class Ball : MonoBehaviour
             Vector2 vel;
             vel.x = rigidbody.velocity.x;
             vel.y = (rigidbody.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
-            rigidbody.velocity = vel;
+            rigidbody.velocity = vel * 1.025f;
         }      
     }
 }
