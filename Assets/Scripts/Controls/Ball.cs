@@ -13,18 +13,17 @@ public class Ball : MonoBehaviour
  
     void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.velocity = Vector2.right * startspeed;
         //wait two second before shooting the ball
-        //Invoke("BeginRound", 2.0f);
+        Invoke("BeginRound", 1.5f);
     }
     void BeginRound(){
         float randomValue = Random.value;
+        float randx = Random.Range(0.3f, 1.0f);
+        float randy = Random.Range(-1f, 1.0f);
         if(randomValue >= 0.5f)
-            rigidbody.velocity = Vector2.right * startspeed;
-            //rigidbody.AddForce(new Vector2(20, -15));
+            rigidbody.velocity = new Vector2(randx, randy) * startspeed;
         else
-            rigidbody.velocity = Vector2.left * startspeed;
-            //rigidbody.AddForce(new Vector2(-20, -15));
+            rigidbody.velocity = new Vector2(-randx, randy)  * startspeed;
     }
     public void RestartGame(){
         rigidbody.velocity = new Vector2(0, 0);

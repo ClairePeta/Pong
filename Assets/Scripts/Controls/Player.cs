@@ -65,7 +65,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
         Vector2 pos = (Vector2)transform.position;        
         if (pos.y > bounds) { pos.y = bounds; } /*upper bounds*/
         else if (pos.y < -bounds) { pos.y = -bounds; } /*lower bounds*/

@@ -11,14 +11,13 @@ public class GameOverScreen : MonoBehaviour
     public Button replayButton;
     public TextMeshProUGUI winner;
 
-    // Start is called before the first frame update
     void Start()
     {
         homeButton.onClick.AddListener(()=> {
             SceneManager.LoadScene("Menu");
         });
         replayButton.onClick.AddListener(()=> {
-            //StartGame(true);
+            SceneManager.LoadScene("Game");
         });                
     }
     public void displayGameOver(string name){
