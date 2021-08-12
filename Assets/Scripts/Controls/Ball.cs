@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     new Rigidbody2D rigidbody;
+    public AudioSource audio;
     Vector2 velocity;
     bool saved = false;
 
@@ -45,6 +46,8 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D coll) {
         if(coll.collider.CompareTag("Player")){
+            if(PongGlobal.effectVolume)
+                audio.Play();
             Vector2 vel;
             vel.x = rigidbody.velocity.x;
             vel.y = (rigidbody.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);

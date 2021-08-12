@@ -7,19 +7,15 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    //players score stored here
     public static int PlayerOneScore = 0;
     public static int PlayerTwoScore = 0;
-    bool won = false;
     public GameOverScreen gameover;
     public GameObject pauseScreen;
     public GameObject countdownCanvas;
     
-    void Start()
-    {
+    void Start(){
         instance = this;
     }
-
     public static void IncrementScore(string hitside){
         if(hitside == "ScoreCollider-Right")
             PlayerTwoScore++;

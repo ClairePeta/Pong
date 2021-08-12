@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameover: {fileID: 117395617}
   pauseScreen: {fileID: 395411620}
+  countdownCanvas: {fileID: 1979364922}
 --- !u!4 &319039072
 Transform:
   m_ObjectHideFlags: 0
@@ -774,7 +775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resumeButton: {fileID: 957859644}
-  countdownCanvas: {fileID: 1979364922}
 --- !u!1 &426504111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,6 +3153,7 @@ GameObject:
   - component: {fileID: 1907073243}
   - component: {fileID: 1907073242}
   - component: {fileID: 1907073241}
+  - component: {fileID: 1907073246}
   m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
@@ -3191,6 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02ce23745a45ff408a226f04d4678f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 1907073246}
 --- !u!58 &1907073242
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3264,6 +3266,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907073239}
   m_CullTransparentMesh: 0
+--- !u!82 &1907073246
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907073239}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e062a83ff03e1414c854e51485edff72, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1979364922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,7 +3371,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1979364923}
-  - component: {fileID: 1979364924}
   m_Layer: 5
   m_Name: Countdown
   m_TagString: Untagged
@@ -3302,20 +3399,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1979364924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979364922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9332a62d271c70b4981702ddabb4a0cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resumeButton: {fileID: 0}
-  countdownCanvas: {fileID: 0}
 --- !u!1 &1988574684
 GameObject:
   m_ObjectHideFlags: 0

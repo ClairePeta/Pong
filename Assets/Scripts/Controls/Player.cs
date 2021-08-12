@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,15 +12,13 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public TextMeshProUGUI scoreText;
 
-    void Start()
-    {
+    void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)){ PongGlobal.paused = true; GameManager.instance.pause();}
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Space)){ PongGlobal.paused = true; GameManager.instance.pause();} /*pause*/ 
+        if (Input.GetKeyDown(KeyCode.Escape)){ SceneManager.LoadScene("Menu");} /*quit*/ 
         if(player1 && !PongGlobal.paused){
             scoreText.text = GameManager.PlayerOneScore.ToString();          
             var vel = rigidbody.velocity;
