@@ -13,11 +13,11 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         startSinglePlayerButton.onClick.AddListener(()=> {
-            PongGlobal.playAgainstAI = false;
+            PongGlobal.playAgainstAI = true;
             SceneManager.LoadScene("Game");
         });
         startMultiPlayerButton.onClick.AddListener(()=> {
-            PongGlobal.playAgainstAI = true;
+            PongGlobal.playAgainstAI = false;
             SceneManager.LoadScene("Game");
         });
         settingsButton.onClick.AddListener(()=> {

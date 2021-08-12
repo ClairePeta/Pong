@@ -13,9 +13,14 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     GameObject ball;
     public TextMeshProUGUI scoreText;
+    RectTransform rect;
+    float bounds = 0.0f;
 
     void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
+        rect = GetComponent<RectTransform>();
+        bounds = (Screen.height - 60) / 100.0f;
+        Debug.Log("screen heigh: " + Screen.height + " bounds " + bounds);
         if(PongGlobal.playAgainstAI){
             AI = true;
             ball = GameObject.Find("Ball");
@@ -53,9 +58,9 @@ public class Player : MonoBehaviour
                     scoreText.text = GameManager.PlayerTwoScore.ToString();   
                     var vel = rigidbody.velocity;
                     float direction = ball.transform.position.y - transform.position.y;
-                    if (direction > 0 ) 
+                    if (direction > 0.5f ) 
                         vel.y = speed;  /*move up*/ 
-                    else if (direction < 0) 
+                    else if (direction < -0.5f) 
                         vel.y = -speed; /*move down*/
                     else 
                         vel.y = 0; /*stop moving*/
@@ -64,9 +69,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        Vector2 pos = (Vector2)transform.position;
-        if (pos.y > 4.2f) { pos.y = 4.2f; } /*upper bounds*/
-        else if (pos.y < -4.2f) { pos.y = -4.2f; } /*lower bounds*/
+        Vector2 pos = (Vector2)transform.position;        
+        if (pos.y > bounds) { pos.y = bounds; } /*upper bounds*/
+        else if (pos.y < -bounds) { pos.y = -bounds; } /*lower bounds*/
         transform.position = pos; 
     }
 }
